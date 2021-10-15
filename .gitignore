@@ -1,0 +1,11 @@
+*.o
+*.a
+*.out
+.vscode
+objects
+files
+images
+license
+README.md
+push_swap
+checker
