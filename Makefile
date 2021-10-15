@@ -3,7 +3,7 @@ LIBFT			=	$(LIBFT_PATH)/libft.a
 
 SOURCES_FILES	=
 
-SOURCES_BONUS	=	main.c checker.c
+SOURCES_BONUS	=	main.c checker.c utils.c
 
 SOURCES_DIR		=	sources
 BONUS_DIR		=	sources_bonus
