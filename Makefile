@@ -3,8 +3,8 @@ LIBFT			=	$(LIBFT_PATH)/libft.a
 
 SOURCES_FILES	=
 
-SOURCES_BONUS	=	checker.c data_utils.c debug.c error.c
-SOURCES_BONUS	+=	main.c mem_utils.c parser.c utils.c
+SOURCES_BONUS	=	checker.c debug.c error.c main.c parser.c
+SOURCES_BONUS	+=	utils.c utils_data.c utils_mem.c
 
 SOURCES_DIR		=	sources
 BONUS_DIR		=	sources_bonus
@@ -26,7 +26,7 @@ NAME_BONUS		=	checker
 CC				=	clang
 RM				=	rm -rf
 
-CFLAGS			=	-Wall -Wextra -Werror
+CFLAGS			=	-Wall -Wextra -Werror -g3
 
 $(OBJ_DIR)/%.o:		$(SOURCES_DIR)/%.c $(HEADER)
 					$(CC) $(CFLAGS) -c $< -o $@
@@ -73,5 +73,8 @@ runbv1:
 
 runbv2:
 					clear && make bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./checker 1 2 3 4 a
+
+runbv3:
+					clear && make bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./checker 1 2 3 4 1
 
 .PHONY:				all clean fclean re libft bonus

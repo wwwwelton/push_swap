@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/16 04:26:07 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/16 07:00:37 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,39 @@ int	valid_number(char *nbr)
 	if (ft_atoi(nbr) == 0 && big_digits)
 		return (false);
 	return (true);
+}
+
+int	unique_numbers(int	*nbrs, int size)
+{
+	int	i;
+	int	j;
+	int	found;
+
+	i = -1;
+	while (++i < size)
+	{
+		found = 0;
+		j = -1;
+		while (++j < size)
+		{
+			if (nbrs[i] == nbrs[j])
+				found++;
+			if (found > 1)
+				return (false);
+		}
+	}
+	return (true);
+}
+
+int	valid_opt(char *opt, char **opts)
+{
+	int		i;
+
+	if (!opt)
+		return (false);
+	i = -1;
+	while (opts[++i])
+		if (ft_strncmp(opt, opts[i], ft_strlen(opts[i])) == 0)
+			return (true);
+	return (false);
 }
