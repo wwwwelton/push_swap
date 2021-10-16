@@ -4,7 +4,7 @@ LIBFT			=	$(LIBFT_PATH)/libft.a
 SOURCES_FILES	=
 
 SOURCES_BONUS	=	checker.c debug.c error.c main.c parser.c
-SOURCES_BONUS	+=	utils.c utils_data.c utils_mem.c
+SOURCES_BONUS	+=	utils.c utils_data.c utils_mem.c operator.c op_swap.c
 
 SOURCES_DIR		=	sources
 BONUS_DIR		=	sources_bonus

@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/16 07:10:21 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/16 14:01:21 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	init_data(int argc, char **argv, t_data *data)
 	if (!data->stack_a || !data->stack_b || !data->operations || !data->options)
 		exit_error("Memory allocation failed\n", 1, data);
 	data->stack_size = argc - 1;
+	data->size_a = argc - 1;
+	data->size_b = 0;
 	data->op_count = 0;
 	data->stack_ordered = false;
 	data->argc = argc;
