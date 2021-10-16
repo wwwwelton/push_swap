@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   mem_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 10:10:32 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/16 04:25:34 by wleite           ###   ########.fr       */
+/*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
+/*   Updated: 2021/10/16 04:25:37 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	main(int argc, char **argv)
+void	*new_array(size_t number, size_t size)
 {
-	if (argc > 1)
-		return (checker(argc, argv));
-	return (EXIT_SUCCESS);
+	void	*ptr;
+
+	ptr = (void *)malloc(number * size);
+	if (!ptr)
+		return (NULL);
+	return (ptr);
 }

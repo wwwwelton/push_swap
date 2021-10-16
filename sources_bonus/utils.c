@@ -6,17 +6,29 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/15 18:41:16 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/16 04:26:07 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	init_checker(t_data *data)
+int	valid_number(char *nbr)
 {
-	data->stack_a = NULL;
-	data->stack_b = NULL;
-	data->ops = NULL;
-	data->ops_count = 0;
-	data->stack_ordered = false;
+	int	i;
+	int	big_digits;
+
+	big_digits = 0;
+	i = -1;
+	while (nbr[++i] != '\0')
+	{
+		if (ft_isalpha(nbr[i]))
+			return (false);
+		else if (ft_isdigit(nbr[i]) && nbr[i + 1] == '-')
+			return (false);
+		if (nbr[i] >= '1' && nbr[i] <= '9')
+			big_digits++;
+	}
+	if (ft_atoi(nbr) == 0 && big_digits)
+		return (false);
+	return (true);
 }

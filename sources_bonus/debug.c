@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 10:10:32 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/16 04:25:34 by wleite           ###   ########.fr       */
+/*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
+/*   Updated: 2021/10/16 04:25:29 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	main(int argc, char **argv)
+void	debug_stack_a(int *stack, int size)
 {
-	if (argc > 1)
-		return (checker(argc, argv));
-	return (EXIT_SUCCESS);
+	int	i;
+
+	i = -1;
+	printf("\nStack A:\n");
+	while (++i < size)
+		printf("i: %d | stack: %d\n", i, stack[i]);
+	printf("\n");
 }

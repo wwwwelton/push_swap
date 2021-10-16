@@ -3,7 +3,8 @@ LIBFT			=	$(LIBFT_PATH)/libft.a
 
 SOURCES_FILES	=
 
-SOURCES_BONUS	=	main.c checker.c utils.c
+SOURCES_BONUS	=	checker.c data_utils.c debug.c error.c
+SOURCES_BONUS	+=	main.c mem_utils.c parser.c utils.c
 
 SOURCES_DIR		=	sources
 BONUS_DIR		=	sources_bonus
@@ -58,5 +59,19 @@ fclean:				clean
 					$(RM) $(NAME) $(NAME_BONUS)
 
 re:					fclean all
+
+normb:
+					clear && norminette $(BONUS_FILES) $(HEADER_BONUS)
+runb:
+					clear && make bonus && ./checker 1 2 3 4 5
+
+runbe:
+					clear && make bonus && ./checker 1 2 3 4 a
+
+runbv1:
+					clear && make bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./checker 1 2 3 4 5
+
+runbv2:
+					clear && make bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./checker 1 2 3 4 a
 
 .PHONY:				all clean fclean re libft bonus

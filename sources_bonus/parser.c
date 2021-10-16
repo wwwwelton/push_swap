@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 10:10:32 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/16 04:25:34 by wleite           ###   ########.fr       */
+/*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
+/*   Updated: 2021/10/16 04:34:30 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	main(int argc, char **argv)
+void	get_args(t_data *data)
 {
-	if (argc > 1)
-		return (checker(argc, argv));
-	return (EXIT_SUCCESS);
+	int	i;
+
+	i = -1;
+	while (++i < data->stack_size)
+	{
+		if (valid_number(data->argv[i + 1]) == true)
+			data->stack_a[i] = ft_atoi(data->argv[i + 1]);
+		else
+			exit_error(data);
+	}
 }
