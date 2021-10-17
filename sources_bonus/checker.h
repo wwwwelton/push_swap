@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/16 15:06:10 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/17 01:13:07 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ int		unique_numbers(int	*nbrs, int size);
 void	set_ops(t_data *data);
 
 void	swap(int **stack_a, int *size_a, int **stack_b, int *size_b);
+void	push(int **stack_from, int *size_from, int **stack_to, int *size_to);
 
 #endif

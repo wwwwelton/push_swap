@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/16 15:09:53 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/17 01:45:05 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ static void	set_op(char *op, t_data *data)
 		swap(NULL, 0, &data->stack_b, &data->size_b);
 	else if (!ft_strncmp(op, "ss", 3))
 		swap(&data->stack_a, &data->size_a, &data->stack_b, &data->size_b);
+	else if (!ft_strncmp(op, "pa", 3))
+		push(&data->stack_b, &data->size_b, &data->stack_a, &data->size_a);
+	else if (!ft_strncmp(op, "pb", 3))
+		push(&data->stack_a, &data->size_a, &data->stack_b, &data->size_b);
 }
 
 void	set_ops(t_data *data)
