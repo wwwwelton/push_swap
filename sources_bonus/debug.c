@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/17 01:40:38 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/17 02:03:34 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ void	debug_stack_a(t_data *data)
 	int	i;
 
 	i = data->size_a;
-	printf("\nStack A:\n");
+	printf("\nStack A\n");
+	printf("Size: %d\n", data->size_a);
+	printf("========\n");
 	while (i-- > 0)
 		printf("index: %d | stack: %d\n", i, data->stack_a[i]);
+	printf("========\n");
 	printf("\n");
 }
 
@@ -28,9 +31,12 @@ void	debug_stack_b(t_data *data)
 	int	i;
 
 	i = data->size_b;
-	printf("\nStack B:\n");
+	printf("\nStack B\n");
+	printf("Size: %d\n", data->size_b);
+	printf("========\n");
 	while (i-- > 0)
 		printf("index: %d | stack: %d\n", i, data->stack_b[i]);
+	printf("========\n");
 	printf("\n");
 }
 
