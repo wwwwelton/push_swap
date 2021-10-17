@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/16 11:39:30 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/17 02:04:50 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ void	get_args(t_data *data)
 	while (++i < data->stack_size)
 	{
 		if (valid_number(data->argv[i + 1]) == true)
+		{
 			data->stack_a[i] = ft_atoi(data->argv[i + 1]);
+			data->size_a++;
+		}
 		else
 			exit_error(NULL, 1, data);
 	}
