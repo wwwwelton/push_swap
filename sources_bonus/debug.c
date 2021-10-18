@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/18 14:02:59 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/18 16:20:44 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,44 @@ void	debug_stack_a_b(t_data *data)
 		printf("\n");
 	}
 	printf("========\n");
+	printf("\n");
+}
+
+void	debug_print_stack_a_order(t_data *data)
+{
+	int	i;
+
+	i = -1;
+	printf("\nStack A: \n");
+	printf("========\n");
+	printf("value => ");
+	while (++i < data->size_a)
+		printf("[%d] ", data->stack_a[i]);
+	printf("\n");
+	printf("index => ");
+	i = -1;
+	while (++i < data->size_a)
+		printf("[%d] ", i);
+	printf("\n========\n");
+	printf("\n");
+}
+
+void	debug_print_stack_b_order(t_data *data)
+{
+	int	i;
+
+	i = -1;
+	printf("\nStack B: \n");
+	printf("========\n");
+	printf("value => ");
+	while (++i < data->size_b)
+		printf("[%d] ", data->stack_b[i]);
+	printf("\n");
+	printf("index => ");
+	i = -1;
+	while (++i < data->size_b)
+		printf("[%d] ", i);
+	printf("\n========\n");
 	printf("\n");
 }
 

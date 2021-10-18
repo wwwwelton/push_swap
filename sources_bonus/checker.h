@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/18 15:32:48 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/18 16:22:45 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	debug_stack_a(t_data *data);
 void	debug_stack_b(t_data *data);
 void	debug_stack_a_b(t_data *data);
 void	debug_ops(t_data *data);
+void	debug_print_stack_a_order(t_data *data);
+void	debug_print_stack_b_order(t_data *data);
 
 void	exit_error(char *message, int status_code, t_data *data);
 
