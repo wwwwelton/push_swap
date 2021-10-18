@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/17 01:13:07 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/18 12:24:38 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	free_splited_mat(char **mat);
 
 void	debug_stack_a(t_data *data);
 void	debug_stack_b(t_data *data);
+void	debug_stack_a_b(t_data *data);
 void	debug_ops(t_data *data);
 
 void	exit_error(char *message, int status_code, t_data *data);

@@ -70,7 +70,7 @@ runbe:
 					clear && make bonus && ./checker 1 2 3 4 a
 
 runbv1:
-					clear && make bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./checker 1 2 3 4 5
+					clear && make bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./checker 4 3 6 5 7 0 8 9 2 1
 
 runbv2:
 					clear && make bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./checker 1 2 3 4 a
