@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/16 07:00:37 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/18 17:59:28 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,23 @@ int	valid_opt(char *opt, char **opts)
 	while (opts[++i])
 		if (ft_strncmp(opt, opts[i], ft_strlen(opts[i])) == 0)
 			return (true);
+	return (false);
+}
+
+int	stack_is_sorted(t_data *data)
+{
+	int	i;
+
+	i = -1;
+	while (++i < (data->size_a - 1))
+		if (data->stack_a[i] > data->stack_a[i + 1])
+			return (false);
+	return (true);
+}
+
+int	valid_sort(t_data *data)
+{
+	if (stack_is_sorted(data) && !data->size_b)
+		return (true);
 	return (false);
 }

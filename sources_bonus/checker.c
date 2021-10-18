@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/18 12:24:10 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/18 17:58:46 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ int	checker(int argc, char **argv)
 	get_args(&data);
 	get_ops(&data);
 	set_ops(&data);
-	debug_stack_a_b(&data);
+	if (valid_sort(&data))
+		ft_putstr_fd("OK\n", STDOUT_FILENO);
+	else
+		ft_putstr_fd("KO\n", STDOUT_FILENO);
 	deinit_data(&data);
 	return (EXIT_SUCCESS);
 }

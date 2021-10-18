@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/18 16:22:45 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/18 17:59:24 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,8 @@ void	swap(int **stack_a, int *size_a, int **stack_b, int *size_b);
 void	push(int **stack_from, int *size_from, int **stack_to, int *size_to);
 void	rotate(int **stack_a, int *size_a, int **stack_b, int *size_b);
 void	rrotate(int **stack_a, int *size_a, int **stack_b, int *size_b);
+
+int		stack_is_sorted(t_data *data);
+int		valid_sort(t_data *data);
 
 #endif
