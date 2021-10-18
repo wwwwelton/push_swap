@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/16 15:06:19 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/18 14:14:27 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ static void	do_swap(int **stack, int *size)
 {
 	int	tmp;
 
-	if (*size > 1)
+	if (*size >= 1)
 	{
-		tmp = (*stack)[*size - 1];
-		(*stack)[*size - 1] = (*stack)[*size - 2];
-		(*stack)[*size - 2] = tmp;
+		tmp = (*stack)[0];
+		(*stack)[0] = (*stack)[1];
+		(*stack)[1] = tmp;
 	}
 }
 
