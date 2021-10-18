@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/18 14:43:23 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/18 15:28:30 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ static void	set_op(char *op, t_data *data)
 		rotate(NULL, 0, &data->stack_b, &data->size_b);
 	else if (!ft_strncmp(op, "rr", 3))
 		rotate(&data->stack_a, &data->size_a, &data->stack_b, &data->size_b);
+	else if (!ft_strncmp(op, "rra", 4))
+		rrotate(&data->stack_a, &data->size_a, NULL, 0);
+	else if (!ft_strncmp(op, "rrb", 4))
+		rrotate(NULL, 0, &data->stack_b, &data->size_b);
+	else if (!ft_strncmp(op, "rrr", 4))
+		rrotate(&data->stack_a, &data->size_a, &data->stack_b, &data->size_b);
 }
 
 void	set_ops(t_data *data)
