@@ -6,33 +6,38 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/18 15:07:52 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/19 00:03:00 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static void	do_rotate(int **stack, int *size)
+static void	do_rotate(int *stack, int size)
 {
 	int	tmp;
 
-	if (*size >= 1)
+	if (size >= 1)
 	{
-		tmp = (*stack)[0];
-		ft_memmove(&(*stack)[0], &(*stack)[1], sizeof(int) * *size);
-		(*stack)[*size - 1] = tmp;
+		tmp = stack[0];
+		ft_memmove(&stack[0], &stack[1], sizeof(int) * size);
+		stack[size - 1] = tmp;
 	}
 }
 
-void	rotate(int **stack_a, int *size_a, int **stack_b, int *size_b)
+void	rotate(int op, t_data *data)
 {
-	if (stack_a && !stack_b)
-		do_rotate(stack_a, size_a);
-	else if (!stack_a && stack_b)
-		do_rotate(stack_b, size_b);
-	else if (stack_a && stack_b)
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	stack_a = data->stack_a;
+	stack_b = data->stack_b;
+	if (op == RA)
+		do_rotate(stack_a->items, stack_a->top);
+	else if (op == RB)
+		do_rotate(stack_b->items, stack_b->top);
+	else if (op == RR)
 	{
-		do_rotate(stack_a, size_a);
-		do_rotate(stack_b, size_b);
+		do_rotate(stack_a->items, stack_a->top);
+		do_rotate(stack_b->items, stack_b->top);
 	}
 }

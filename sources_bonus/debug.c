@@ -6,58 +6,30 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/18 16:20:44 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/19 01:22:49 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-void	debug_stack_a(t_data *data)
-{
-	int	i;
-
-	i = -1;
-	printf("\nStack A\n");
-	printf("Size: %d\n", data->size_a);
-	printf("========\n");
-	while (++i < data->size_a)
-		printf("index: %d | stack: %d\n", i, data->stack_a[i]);
-	printf("========\n");
-	printf("\n");
-}
-
-void	debug_stack_b(t_data *data)
-{
-	int	i;
-
-	i = -1;
-	printf("\nStack B\n");
-	printf("Size: %d\n", data->size_b);
-	printf("========\n");
-	while (++i < data->size_b)
-		printf("index: %d | stack: %d\n", i, data->stack_b[i]);
-	printf("========\n");
-	printf("\n");
-}
 
 void	debug_stack_a_b(t_data *data)
 {
 	int	i;
 
 	i = -1;
-	printf("\nSize A: %d | Size B: %d\n", data->size_a, data->size_b);
+	printf("\nSize A: %d | Size B: %d\n", data->stack_a->top, data->stack_b->top);
 	printf("========\n");
-	while (++i < data->stack_size)
+	while (++i < data->stack_a->maxsize)
 	{
 		if (i >= (int)data->stack_a && i >= (int)data->stack_b)
 			break ;
 		printf("index: %d | ", i);
-		if (i < (int)data->size_a)
-			printf("Stack A: %d | ", data->stack_a[i]);
+		if (i < (int)data->stack_a->top)
+			printf("Stack A: %d | ", data->stack_a->items[i]);
 		else
 			printf("Stack A:   | ");
-		if (i < (int)data->size_b)
-			printf("Stack B: %d", data->stack_b[i]);
+		if (i < (int)data->stack_b->top)
+			printf("Stack B: %d", data->stack_b->items[i]);
 		else
 			printf("Stack B:  ");
 		printf("\n");
@@ -74,12 +46,12 @@ void	debug_print_stack_a_order(t_data *data)
 	printf("\nStack A: \n");
 	printf("========\n");
 	printf("value => ");
-	while (++i < data->size_a)
-		printf("[%d] ", data->stack_a[i]);
+	while (++i < data->stack_a->top)
+		printf("[%d] ", data->stack_a->items[i]);
 	printf("\n");
 	printf("index => ");
 	i = -1;
-	while (++i < data->size_a)
+	while (++i < data->stack_a->top)
 		printf("[%d] ", i);
 	printf("\n========\n");
 	printf("\n");
@@ -93,12 +65,12 @@ void	debug_print_stack_b_order(t_data *data)
 	printf("\nStack B: \n");
 	printf("========\n");
 	printf("value => ");
-	while (++i < data->size_b)
-		printf("[%d] ", data->stack_b[i]);
+	while (++i < data->stack_b->top)
+		printf("[%d] ", data->stack_b->items[i]);
 	printf("\n");
 	printf("index => ");
 	i = -1;
-	while (++i < data->size_b)
+	while (++i < data->stack_b->top)
 		printf("[%d] ", i);
 	printf("\n========\n");
 	printf("\n");

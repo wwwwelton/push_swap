@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/16 07:10:11 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/19 01:44:24 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,19 @@ void	*new_array(size_t number, size_t size)
 	if (!ptr)
 		return (NULL);
 	return (ptr);
+}
+
+t_stack	*new_stack(int capacity)
+{
+	t_stack	*stack;
+
+	stack = (t_stack *)malloc(sizeof(t_stack));
+	if (!stack)
+		return (NULL);
+	stack->maxsize = capacity;
+	stack->top = 0;
+	stack->items = (int *)new_array(sizeof(int *), capacity);
+	return (stack);
 }
 
 void	free_splited_mat(char **mat)

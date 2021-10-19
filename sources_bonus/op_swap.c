@@ -6,33 +6,38 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/18 14:14:27 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/19 00:01:26 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static void	do_swap(int **stack, int *size)
+static void	do_swap(int *stack, int size)
 {
 	int	tmp;
 
-	if (*size >= 1)
+	if (size >= 1)
 	{
-		tmp = (*stack)[0];
-		(*stack)[0] = (*stack)[1];
-		(*stack)[1] = tmp;
+		tmp = stack[0];
+		stack[0] = stack[1];
+		stack[1] = tmp;
 	}
 }
 
-void	swap(int **stack_a, int *size_a, int **stack_b, int *size_b)
+void	swap(int op, t_data *data)
 {
-	if (stack_a && !stack_b)
-		do_swap(stack_a, size_a);
-	else if (!stack_a && stack_b)
-		do_swap(stack_b, size_b);
-	else if (stack_a && stack_b)
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	stack_a = data->stack_a;
+	stack_b = data->stack_b;
+	if (op == SA)
+		do_swap(stack_a->items, stack_a->top);
+	else if (op == SB)
+		do_swap(stack_b->items, stack_b->top);
+	else if (op == SS)
 	{
-		do_swap(stack_a, size_a);
-		do_swap(stack_b, size_b);
+		do_swap(stack_a->items, stack_a->top);
+		do_swap(stack_b->items, stack_b->top);
 	}
 }

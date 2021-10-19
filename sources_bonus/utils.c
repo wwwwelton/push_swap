@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/18 17:59:28 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/19 01:39:22 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	valid_number(char *nbr)
 	i = -1;
 	while (nbr[++i] != '\0')
 	{
-		if (ft_isalpha(nbr[i]))
+		if (!ft_isdigit(nbr[i]) && nbr[i] != '-')
 			return (false);
 		else if (ft_isdigit(nbr[i]) && nbr[i + 1] == '-')
 			return (false);
@@ -68,20 +68,20 @@ int	valid_opt(char *opt, char **opts)
 	return (false);
 }
 
-int	stack_is_sorted(t_data *data)
+int	stack_is_sorted(t_stack *stack)
 {
 	int	i;
 
 	i = -1;
-	while (++i < (data->size_a - 1))
-		if (data->stack_a[i] > data->stack_a[i + 1])
+	while (++i < (stack->top - 1))
+		if (stack->items[i] > stack->items[i + 1])
 			return (false);
 	return (true);
 }
 
 int	valid_sort(t_data *data)
 {
-	if (stack_is_sorted(data) && !data->size_b)
+	if (stack_is_sorted(data->stack_a) && !data->stack_b->top)
 		return (true);
 	return (false);
 }

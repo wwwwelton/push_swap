@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/18 17:59:24 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/19 00:44:56 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,33 @@
 #  define OPTIONS "sa\n sb\n ss\n pa\n pb\n ra\n rb\n rr\n rra\n rrb\n rrr\n"
 # endif
 
+# define SA 133
+# define SB 134
+# define SS 151
+# define PA 127
+# define PB 128
+# define RA 131
+# define RB 132
+# define RR 148
+# define RRA 148
+# define RRB 149
+# define RRR 165
+
+typedef struct s_stack
+{
+	int	maxsize;
+	int	top;
+	int	*items;
+}	t_stack;
+
 typedef struct s_data
 {
-	int		*stack_a;
-	int		*stack_b;
 	int		argc;
-	int		op_count;
-	int		stack_size;
-	int		size_a;
-	int		size_b;
 	char	*operations;
 	char	**options;
 	char	**argv;
-	bool	stack_ordered;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 }	t_data;
 
 int		checker(int argc, char **argv);
@@ -62,12 +76,14 @@ int		unique_numbers(int	*nbrs, int size);
 
 void	set_ops(t_data *data);
 
-void	swap(int **stack_a, int *size_a, int **stack_b, int *size_b);
-void	push(int **stack_from, int *size_from, int **stack_to, int *size_to);
-void	rotate(int **stack_a, int *size_a, int **stack_b, int *size_b);
-void	rrotate(int **stack_a, int *size_a, int **stack_b, int *size_b);
+void	swap(int op, t_data *data);
+void	push(int op, t_data *data);
+void	rotate(int op, t_data *data);
+void	rrotate(int op, t_data *data);
 
-int		stack_is_sorted(t_data *data);
+int		stack_is_sorted(t_stack *stack);
 int		valid_sort(t_data *data);
+
+t_stack	*new_stack(int capacity);
 
 #endif
