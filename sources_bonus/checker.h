@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/19 00:44:56 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/19 02:26:15 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CHECKER_H
 
 # include "stdbool.h"
-# include "stdio.h"
 # include "../libraries/libft/libft.h"
 
 # ifndef OPTIONS
@@ -51,39 +50,23 @@ typedef struct s_data
 }	t_data;
 
 int		checker(int argc, char **argv);
-
-void	init_data(int argc, char **argv, t_data *data);
-void	deinit_data(t_data *data);
-
-void	get_args(t_data *data);
-void	get_ops(t_data *data);
-
-void	*new_array(size_t number, size_t size);
-void	free_splited_mat(char **mat);
-
-void	debug_stack_a(t_data *data);
-void	debug_stack_b(t_data *data);
-void	debug_stack_a_b(t_data *data);
-void	debug_ops(t_data *data);
-void	debug_print_stack_a_order(t_data *data);
-void	debug_print_stack_b_order(t_data *data);
-
-void	exit_error(char *message, int status_code, t_data *data);
-
+int		stack_is_sorted(t_stack *stack);
+int		unique_numbers(int	*nbrs, int size);
 int		valid_number(char *nbr);
 int		valid_opt(char *opt, char **opts);
-int		unique_numbers(int	*nbrs, int size);
-
-void	set_ops(t_data *data);
-
-void	swap(int op, t_data *data);
+int		valid_sort(t_data *data);
+void	deinit_data(t_data *data);
+void	exit_error(char *message, int status_code, t_data *data);
+void	free_splited_mat(char **mat);
+void	get_args(t_data *data);
+void	get_ops(t_data *data);
+void	init_data(int argc, char **argv, t_data *data);
 void	push(int op, t_data *data);
 void	rotate(int op, t_data *data);
 void	rrotate(int op, t_data *data);
-
-int		stack_is_sorted(t_stack *stack);
-int		valid_sort(t_data *data);
-
+void	set_ops(t_data *data);
+void	swap(int op, t_data *data);
+void	*new_array(size_t number, size_t size);
 t_stack	*new_stack(int capacity);
 
 #endif
