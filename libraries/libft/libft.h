@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 19:25:46 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/12 12:09:30 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/19 02:12:17 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -581,5 +581,15 @@ char	*ft_get_next_line(int fd);
  * @return The new string. NULL if the allocation fails.
  */
 char	*ft_strmerge(char *s1, char *s2);
+
+/**
+ * @brief Converts the string argument nptr to a long integer (type long int).
+ *
+ * @param nptr This is the string representation of an integral number.
+ * @return This function returns the converted integral number
+ * as a long int value.
+ * If no valid conversion could be performed, it returns zero.
+ */
+long	ft_atol(const char *nptr);
 
 #endif

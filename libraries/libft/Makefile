@@ -10,7 +10,7 @@ SOURCES			+=	ft_tolower.c ft_toupper.c
 
 SOURCES			+=	ft_free_ptr.c ft_str_replace.c ft_str_toupper.c
 SOURCES			+=	ft_char_to_str.c ft_uitoa_base.c ft_get_next_line.c
-SOURCES			+=	ft_strmerge.c
+SOURCES			+=	ft_strmerge.c ft_atol.c
 
 SOURCES_BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c
 SOURCES_BONUS	+=	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c
