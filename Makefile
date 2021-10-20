@@ -1,7 +1,7 @@
 LIBFT_PATH		=	./libraries/libft
 LIBFT			=	$(LIBFT_PATH)/libft.a
 
-SOURCES_FILES	=
+SOURCES_FILES	=	main.c push_swap.c utils_data.c
 
 SOURCES_BONUS	=	checker.c error.c main.c parser.c
 SOURCES_BONUS	+=	utils.c utils_data.c utils_mem.c operator.c
@@ -12,7 +12,7 @@ BONUS_DIR		=	sources_bonus
 
 OBJ_DIR			=	objects
 
-HEADER			=	$(SOURCES_DIR)/
+HEADER			=	$(SOURCES_DIR)/push_swap.h
 HEADER_BONUS	=	$(BONUS_DIR)/checker.h
 
 SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
@@ -60,6 +60,9 @@ fclean:				clean
 					$(RM) $(NAME) $(NAME_BONUS)
 
 re:					fclean all
+
+norm:
+					clear && norminette $(SOURCES) $(HEADER)
 
 normb:
 					clear && norminette $(BONUS_FILES) $(HEADER_BONUS)
