@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/19 00:12:36 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/20 09:20:58 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ void	rrotate(int op, t_data *data)
 
 	stack_a = data->stack_a;
 	stack_b = data->stack_b;
-	if (op == RA)
+	if (op == RRA)
 		do_rrotate(stack_a->items, stack_a->top);
-	else if (op == RB)
+	else if (op == RRB)
 		do_rrotate(stack_b->items, stack_b->top);
-	else if (op == RR)
+	else if (op == RRR)
 	{
 		do_rrotate(stack_a->items, stack_a->top);
 		do_rrotate(stack_b->items, stack_b->top);

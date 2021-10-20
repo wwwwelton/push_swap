@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/18 23:26:48 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/20 09:27:41 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	op_to_code(char *op)
 	i = 0;
 	i += *op;
 	while (*op)
-		i += *op++ - 97;
+		i += *op++;
 	return (i);
 }
 

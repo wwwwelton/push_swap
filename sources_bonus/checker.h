@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/19 02:26:15 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/20 09:03:44 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@
 #  define OPTIONS "sa\n sb\n ss\n pa\n pb\n ra\n rb\n rr\n rra\n rrb\n rrr\n"
 # endif
 
-# define SA 133
-# define SB 134
-# define SS 151
-# define PA 127
-# define PB 128
-# define RA 131
-# define RB 132
-# define RR 148
-# define RRA 148
-# define RRB 149
-# define RRR 165
+# define SA 327
+# define SB 328
+# define SS 345
+# define PA 321
+# define PB 322
+# define RA 325
+# define RB 326
+# define RR 342
+# define RRA 439
+# define RRB 440
+# define RRR 456
 
 typedef struct s_stack
 {
