@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/20 22:06:09 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/20 21:48:29 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	push_swap(int argc, char **argv)
+void	exit_error(char *message, int status_code, t_data *data)
 {
-	t_data	data;
-
-	init_data(argc, argv, &data);
-	deinit_data(&data);
-	return (EXIT_SUCCESS);
+	deinit_data(data);
+	ft_putstr_fd("Error\n", 2);
+	if (message)
+	{
+		ft_putstr_fd(message, 2);
+		ft_putstr_fd("\n", 2);
+	}
+	exit(status_code);
 }

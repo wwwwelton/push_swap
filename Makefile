@@ -1,7 +1,7 @@
 LIBFT_PATH		=	./libraries/libft
 LIBFT			=	$(LIBFT_PATH)/libft.a
 
-SOURCES_FILES	=	main.c push_swap.c utils_data.c
+SOURCES_FILES	=	error.c main.c push_swap.c utils_data.c  utils_mem.c
 
 SOURCES_BONUS	=	checker.c error.c main.c parser.c
 SOURCES_BONUS	+=	utils.c utils_data.c utils_mem.c operator.c

@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/20 12:52:03 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/20 22:05:49 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,19 @@ typedef struct s_data
 	int		argc;
 	int		*args;
 	char	**argv;
-	t_algo	algo_a;
-	t_algo	algo_b;
+	t_algo	*algo_a;
+	t_algo	*algo_b;
 }	t_data;
 
-int	push_swap(int argc, char **argv);
+int		push_swap(int argc, char **argv);
+
+void	*new_array(size_t number, size_t size);
+t_stack	*new_stack(int capacity);
+t_algo	*new_algo(int capacity);
+
+void	init_data(int argc, char **argv, t_data *data);
+void	deinit_data(t_data *data);
+
+void	exit_error(char *message, int status_code, t_data *data);
 
 #endif
