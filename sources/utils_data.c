@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/20 21:45:57 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/21 09:02:05 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	init_data(int argc, char **argv, t_data *data)
 	data->args = (int *)new_array(sizeof(int *), argc - 1);
 	if (init_data_failed(data))
 		exit_error("Memory allocation failed\n", 1, data);
+	data->args_count = argc - 1;
 	data->argc = argc;
 	data->argv = argv;
 }
@@ -46,6 +47,7 @@ static void	deinit_algo(t_algo *algo)
 	ft_free_ptr((void *)&algo->stack_a);
 	ft_free_ptr((void *)&algo->stack_b);
 	ft_free_ptr((void *)&algo->operations);
+	ft_free_ptr((void *)&algo);
 }
 
 void	deinit_data(t_data *data)

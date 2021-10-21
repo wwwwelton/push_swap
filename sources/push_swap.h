@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/20 22:05:49 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/21 08:38:04 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_algo
 typedef struct s_data
 {
 	int		argc;
+	int		args_count;
 	int		*args;
 	char	**argv;
 	t_algo	*algo_a;
@@ -50,5 +51,9 @@ void	init_data(int argc, char **argv, t_data *data);
 void	deinit_data(t_data *data);
 
 void	exit_error(char *message, int status_code, t_data *data);
+void	get_args(t_data *data);
+
+int		valid_number(char *nbr);
+int		unique_numbers(int	*nbrs, int size);
 
 #endif
