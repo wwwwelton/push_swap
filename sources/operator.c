@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_utils.c                                       :+:      :+:    :+:   */
+/*   operator.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 13:46:13 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 13:44:25 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	print_operations(char *operations)
+static void	save_op(int op, t_algo *algo)
 {
-	int		i;
-	char	**splited_operations;
+	char	*opt;
 
-	splited_operations = ft_split(operations, ' ');
-	i = -1;
-	while (splited_operations[++i])
-		ft_putstr_fd(splited_operations[i], 1);
-	free_splited_mat(splited_operations);
+	opt = code_to_op(op, algo->options);
+	algo->operations = ft_strmerge(algo->operations, opt);
+	algo->op_count++;
 }
 
-void	print_best_algo(t_data *data)
+static void	set_op(int op, t_algo *algo)
 {
-	if (data->algo_a <= data->algo_b)
-		print_operations(data->algo_a->operations);
-	else
-		print_operations(data->algo_b->operations);
+	if (op == SA || op == SB || op == SS)
+		swap(op, algo);
+	else if (op == PA || op == PB)
+		push(op, algo);
+	else if (op == RA || op == RB || op == RR)
+		rotate(op, algo);
+	else if (op == RRA || op == RRB || op == RRR)
+		rrotate(op, algo);
+}
+
+void	do_op(int op, t_algo *algo)
+{
+	set_op(op, algo);
+	save_op(op, algo);
 }

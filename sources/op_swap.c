@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_utils.c                                       :+:      :+:    :+:   */
+/*   op_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 13:46:13 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 10:59:38 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	print_operations(char *operations)
+static void	do_swap(int *stack, int size)
 {
-	int		i;
-	char	**splited_operations;
+	int	tmp;
 
-	splited_operations = ft_split(operations, ' ');
-	i = -1;
-	while (splited_operations[++i])
-		ft_putstr_fd(splited_operations[i], 1);
-	free_splited_mat(splited_operations);
+	if (size >= 1)
+	{
+		tmp = stack[0];
+		stack[0] = stack[1];
+		stack[1] = tmp;
+	}
 }
 
-void	print_best_algo(t_data *data)
+void	swap(int op, t_algo *algo)
 {
-	if (data->algo_a <= data->algo_b)
-		print_operations(data->algo_a->operations);
-	else
-		print_operations(data->algo_b->operations);
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	stack_a = algo->stack_a;
+	stack_b = algo->stack_b;
+	if (op == SA)
+		do_swap(stack_a->items, stack_a->top);
+	else if (op == SB)
+		do_swap(stack_b->items, stack_b->top);
+	else if (op == SS)
+	{
+		do_swap(stack_a->items, stack_a->top);
+		do_swap(stack_b->items, stack_b->top);
+	}
 }

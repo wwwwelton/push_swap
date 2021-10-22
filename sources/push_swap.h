@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 06:17:33 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 12:56:32 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,22 @@
 # include "stdbool.h"
 # include "stdio.h"
 # include "../libraries/libft/libft.h"
+
+# ifndef OPTIONS
+#  define OPTIONS "sa\n sb\n ss\n pa\n pb\n ra\n rb\n rr\n rra\n rrb\n rrr\n"
+# endif
+
+# define SA 327
+# define SB 328
+# define SS 345
+# define PA 321
+# define PB 322
+# define RA 325
+# define RB 326
+# define RR 342
+# define RRA 439
+# define RRB 440
+# define RRR 456
 
 typedef struct s_stack
 {
@@ -28,6 +44,7 @@ typedef struct s_algo
 {
 	int		op_count;
 	char	*operations;
+	char	**options;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 }	t_algo;
@@ -65,5 +82,14 @@ int		is_sorted(int *array, int size);
 void	print_best_algo(t_data *data);
 
 void	free_splited_mat(char **mat);
+
+void	do_op(int op, t_algo *algo);
+int		op_to_code(char *op);
+char	*code_to_op(int op, char **options);
+
+void	swap(int op, t_algo *algo);
+void	push(int op, t_algo *algo);
+void	rotate(int op, t_algo *algo);
+void	rrotate(int op, t_algo *algo);
 
 #endif
