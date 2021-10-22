@@ -1,43 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_rrotate.c                                       :+:      :+:    :+:   */
+/*   bonus_utils_mem.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/20 09:20:58 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 07:31:40 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "bonus_checker.h"
 
-static void	do_rrotate(int *stack, int size)
+void	*new_array(size_t number, size_t size)
 {
-	int	tmp;
+	void	*ptr;
 
-	if (size >= 1)
-	{
-		tmp = stack[size - 1];
-		ft_memmove(&stack[1], &stack[0], sizeof(int) * size);
-		stack[0] = tmp;
-	}
+	ptr = (void *)malloc(number * size);
+	if (!ptr)
+		return (NULL);
+	return (ptr);
 }
 
-void	rrotate(int op, t_data *data)
+t_stack	*new_stack(int capacity)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack	*stack;
 
-	stack_a = data->stack_a;
-	stack_b = data->stack_b;
-	if (op == RRA)
-		do_rrotate(stack_a->items, stack_a->top);
-	else if (op == RRB)
-		do_rrotate(stack_b->items, stack_b->top);
-	else if (op == RRR)
+	stack = (t_stack *)malloc(sizeof(t_stack));
+	if (!stack)
+		return (NULL);
+	stack->maxsize = capacity;
+	stack->top = 0;
+	stack->items = (int *)new_array(sizeof(int), capacity);
+	return (stack);
+}
+
+void	free_splited_mat(char **mat)
+{
+	int	i;
+
+	i = -1;
+	if (mat)
 	{
-		do_rrotate(stack_a->items, stack_a->top);
-		do_rrotate(stack_b->items, stack_b->top);
+		while (mat[++i])
+			ft_free_ptr((void *)&mat[i]);
+		ft_free_ptr((void *)&mat);
 	}
 }

@@ -4,9 +4,10 @@ LIBFT			=	$(LIBFT_PATH)/libft.a
 SOURCES_FILES	=	algo_a.c algo_b.c algo_utils.c error.c main.c parser.c
 SOURCES_FILES	+=	push_swap.c utils.c utils_data.c utils_mem.c
 
-SOURCES_BONUS	=	checker.c error.c main.c parser.c
-SOURCES_BONUS	+=	utils.c utils_data.c utils_mem.c operator.c
-SOURCES_BONUS	+=	op_swap.c op_push.c op_rotate.c op_rrotate.c
+SOURCES_BONUS	=	bonus_checker.c bonus_error.c bonus_op_push.c
+SOURCES_BONUS	+=	bonus_op_rrotate.c bonus_operator.c bonus_utils.c
+SOURCES_BONUS	+=	bonus_utils_mem.c bonus_main.c bonus_op_rotate.c
+SOURCES_BONUS	+=	bonus_op_swap.c bonus_parser.c bonus_utils_data.c
 
 SOURCES_DIR		=	sources
 BONUS_DIR		=	sources_bonus
@@ -14,7 +15,7 @@ BONUS_DIR		=	sources_bonus
 OBJ_DIR			=	objects
 
 HEADER			=	$(SOURCES_DIR)/push_swap.h
-HEADER_BONUS	=	$(BONUS_DIR)/checker.h
+HEADER_BONUS	=	$(BONUS_DIR)/bonus_checker.h
 
 SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
 BONUS_FILES		=	$(addprefix $(BONUS_DIR)/, $(SOURCES_BONUS))

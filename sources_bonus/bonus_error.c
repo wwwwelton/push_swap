@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   bonus_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 10:10:32 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/16 04:25:34 by wleite           ###   ########.fr       */
+/*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
+/*   Updated: 2021/10/22 07:13:06 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "bonus_checker.h"
 
-int	main(int argc, char **argv)
+void	exit_error(char *message, int status_code, t_data *data)
 {
-	if (argc > 1)
-		return (checker(argc, argv));
-	return (EXIT_SUCCESS);
+	deinit_data(data);
+	ft_putstr_fd("Error\n", 2);
+	if (message)
+	{
+		ft_putstr_fd(message, 2);
+		ft_putstr_fd("\n", 2);
+	}
+	exit(status_code);
 }

@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   bonus_main.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/19 01:24:34 by wleite           ###   ########.fr       */
+/*   Created: 2021/10/15 10:10:32 by wleite            #+#    #+#             */
+/*   Updated: 2021/10/22 07:13:06 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "bonus_checker.h"
 
-int	checker(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_data	data;
-
-	init_data(argc, argv, &data);
-	get_args(&data);
-	get_ops(&data);
-	set_ops(&data);
-	if (valid_sort(&data))
-		ft_putstr_fd("OK\n", STDOUT_FILENO);
-	else
-		ft_putstr_fd("KO\n", STDOUT_FILENO);
-	deinit_data(&data);
+	if (argc > 1)
+		return (checker(argc, argv));
 	return (EXIT_SUCCESS);
 }

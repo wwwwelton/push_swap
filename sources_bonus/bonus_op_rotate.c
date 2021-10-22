@@ -1,49 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_mem.c                                        :+:      :+:    :+:   */
+/*   bonus_op_rotate.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/19 01:44:24 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 07:13:06 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "bonus_checker.h"
 
-void	*new_array(size_t number, size_t size)
+static void	do_rotate(int *stack, int size)
 {
-	void	*ptr;
+	int	tmp;
 
-	ptr = (void *)malloc(number * size);
-	if (!ptr)
-		return (NULL);
-	return (ptr);
-}
-
-t_stack	*new_stack(int capacity)
-{
-	t_stack	*stack;
-
-	stack = (t_stack *)malloc(sizeof(t_stack));
-	if (!stack)
-		return (NULL);
-	stack->maxsize = capacity;
-	stack->top = 0;
-	stack->items = (int *)new_array(sizeof(int *), capacity);
-	return (stack);
-}
-
-void	free_splited_mat(char **mat)
-{
-	int	i;
-
-	i = -1;
-	if (mat)
+	if (size >= 1)
 	{
-		while (mat[++i])
-			ft_free_ptr((void *)&mat[i]);
-		ft_free_ptr((void *)&mat);
+		tmp = stack[0];
+		ft_memmove(&stack[0], &stack[1], sizeof(int) * size);
+		stack[size - 1] = tmp;
+	}
+}
+
+void	rotate(int op, t_data *data)
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	stack_a = data->stack_a;
+	stack_b = data->stack_b;
+	if (op == RA)
+		do_rotate(stack_a->items, stack_a->top);
+	else if (op == RB)
+		do_rotate(stack_b->items, stack_b->top);
+	else if (op == RR)
+	{
+		do_rotate(stack_a->items, stack_a->top);
+		do_rotate(stack_b->items, stack_b->top);
 	}
 }
