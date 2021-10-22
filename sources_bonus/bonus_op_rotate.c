@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 07:13:06 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 07:42:52 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	do_rotate(int *stack, int size)
 	if (size >= 1)
 	{
 		tmp = stack[0];
-		ft_memmove(&stack[0], &stack[1], sizeof(int) * size);
+		ft_memmove(&stack[0], &stack[1], sizeof(int) * (size - 1));
 		stack[size - 1] = tmp;
 	}
 }
