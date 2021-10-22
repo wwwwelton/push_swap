@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   algo_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 06:59:23 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 06:35:38 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	push_swap(int argc, char **argv)
+static void	print_operations(char *operations)
 {
-	t_data	data;
+	int		i;
+	char	**splited_operations;
 
-	init_data(argc, argv, &data);
-	get_args(&data);
-	if (!is_sorted(data.args, data.args_size))
+	splited_operations = ft_split(operations, ' ');
+	i = -1;
+	while (splited_operations[++i])
 	{
-		sort_algo_a(&data);
-		sort_algo_b(&data);
+		ft_putstr_fd(splited_operations[i], 1);
+		ft_putstr_fd("\n", 1);
 	}
-	print_best_algo(&data);
-	deinit_data(&data);
-	return (EXIT_SUCCESS);
+	free_splited_mat(splited_operations);
+}
+
+void	print_best_algo(t_data *data)
+{
+	if (data->algo_a <= data->algo_b)
+		print_operations(data->algo_a->operations);
+	else
+		print_operations(data->algo_b->operations);
 }
