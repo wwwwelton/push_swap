@@ -1,8 +1,8 @@
 LIBFT_PATH		=	./libraries/libft
 LIBFT			=	$(LIBFT_PATH)/libft.a
 
-SOURCES_FILES	=	error.c main.c push_swap.c utils_data.c  utils_mem.c
-SOURCES_FILES	+=	parser.c utils.c
+SOURCES_FILES	=	algo_a.c algo_b.c algo_utils.c error.c main.c parser.c
+SOURCES_FILES	+=	push_swap.c utils.c utils_data.c utils_mem.c
 
 SOURCES_BONUS	=	checker.c error.c main.c parser.c
 SOURCES_BONUS	+=	utils.c utils_data.c utils_mem.c operator.c
@@ -73,6 +73,9 @@ run:
 
 runv:
 					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap 1 2 3 4 5
+
+runv2:
+					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap 5 4 3 2 1
 
 runb:
 					clear && make bonus && ./checker 1 2 3 4 5

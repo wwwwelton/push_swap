@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/21 08:59:44 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 06:37:27 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_stack	*new_stack(int capacity)
 		return (NULL);
 	stack->maxsize = capacity;
 	stack->top = 0;
-	stack->items = (int *)new_array(sizeof(int *), capacity);
+	stack->items = (int *)new_array(sizeof(int), capacity);
 	return (stack);
 }
 
@@ -47,4 +47,17 @@ t_algo	*new_algo(int capacity)
 	algo->operations = ft_strdup("");
 	algo->op_count = 0;
 	return (algo);
+}
+
+void	free_splited_mat(char **mat)
+{
+	int	i;
+
+	i = -1;
+	if (mat)
+	{
+		while (mat[++i])
+			ft_free_ptr((void *)&mat[i]);
+		ft_free_ptr((void *)&mat);
+	}
 }

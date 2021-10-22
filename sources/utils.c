@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/21 00:06:17 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 06:24:35 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,16 @@ int	unique_numbers(int	*nbrs, int size)
 				return (false);
 		}
 	}
+	return (true);
+}
+
+int	is_sorted(int *array, int size)
+{
+	int	i;
+
+	i = -1;
+	while (++i < (size - 1))
+		if (array[i] > array[i + 1])
+			return (false);
 	return (true);
 }

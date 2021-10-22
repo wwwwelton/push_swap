@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/21 09:02:05 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 06:36:48 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ void	init_data(int argc, char **argv, t_data *data)
 {
 	data->algo_a = new_algo(argc - 1);
 	data->algo_b = new_algo(argc - 1);
-	data->args = (int *)new_array(sizeof(int *), argc - 1);
+	data->args = (int *)new_array(sizeof(int), argc - 1);
 	if (init_data_failed(data))
 		exit_error("Memory allocation failed\n", 1, data);
-	data->args_count = argc - 1;
+	data->args_size = argc - 1;
 	data->argc = argc;
 	data->argv = argv;
 }
