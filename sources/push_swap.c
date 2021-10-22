@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 06:59:23 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 10:32:34 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	push_swap(int argc, char **argv)
 	{
 		sort_algo_a(&data);
 		sort_algo_b(&data);
+		print_best_algo(&data);
 	}
-	print_best_algo(&data);
 	deinit_data(&data);
 	return (EXIT_SUCCESS);
 }
