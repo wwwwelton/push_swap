@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 13:42:54 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 21:47:40 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,37 +61,22 @@ int	unique_numbers(int	*nbrs, int size)
 	return (true);
 }
 
-int	is_sorted(int *array, int size)
+static void	print_operations(char *operations)
 {
-	int	i;
+	int		i;
+	char	**splited_operations;
 
+	splited_operations = ft_split(operations, ' ');
 	i = -1;
-	while (++i < (size - 1))
-		if (array[i] > array[i + 1])
-			return (false);
-	return (true);
+	while (splited_operations[++i])
+		ft_putstr_fd(splited_operations[i], 1);
+	free_splited_mat(splited_operations);
 }
 
-int	op_to_code(char *op)
+void	print_best_algo(t_data *data)
 {
-	int	i;
-
-	i = 0;
-	i += *op;
-	while (*op)
-		i += *op++;
-	return (i);
-}
-
-char	*code_to_op(int op, char **options)
-{
-	int	i;
-
-	i = -1;
-	while (options[++i])
-	{
-		if ((op_to_code(options[i]) - '\n') == op)
-			return (ft_strdup(options[i]));
-	}
-	return (NULL);
+	if (data->algo_a <= data->algo_b)
+		print_operations(data->algo_a->operations);
+	else
+		print_operations(data->algo_b->operations);
 }

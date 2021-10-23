@@ -4,6 +4,7 @@ LIBFT			=	$(LIBFT_PATH)/libft.a
 SOURCES_FILES	=	algo_a.c algo_b.c algo_utils.c error.c main.c parser.c
 SOURCES_FILES	+=	push_swap.c utils.c utils_data.c utils_mem.c
 SOURCES_FILES	+=	op_push.c op_rotate.c op_rrotate.c op_swap.c operator.c
+SOURCES_FILES	+=	op_utils.c
 
 SOURCES_BONUS	=	bonus_checker.c bonus_error.c bonus_op_push.c
 SOURCES_BONUS	+=	bonus_op_rrotate.c bonus_operator.c bonus_utils.c

@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 12:56:32 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 22:31:45 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,10 @@ void	swap(int op, t_algo *algo);
 void	push(int op, t_algo *algo);
 void	rotate(int op, t_algo *algo);
 void	rrotate(int op, t_algo *algo);
+
+int		valid_sort(t_algo *algo);
+int		stack_is_sorted(t_stack *stack);
+int		stack_is_empty(t_stack *stack);
+void	init_stack(t_stack *stack, int *items, int size);
 
 #endif

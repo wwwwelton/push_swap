@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 15:31:14 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/22 22:37:22 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ void	sort_algo_a(t_data *data)
 	t_algo	*algo;
 
 	algo = data->algo_a;
-	ft_memcpy(algo->stack_a->items, data->args, sizeof(int) * data->args_size);
-	do_op(PA, algo);
-	do_op(PB, algo);
+	init_stack(algo->stack_a, data->args, data->args_size);
+	if (!valid_sort(algo))
+	{
+		do_op(PA, algo);
+		do_op(RRA, algo);
+		do_op(RA, algo);
+	}
 }
