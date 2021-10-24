@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/24 09:29:12 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/24 10:02:55 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,9 @@ int		valid_sort(t_algo *algo);
 int		stack_is_sorted(t_stack *stack);
 int		stack_is_empty(t_stack *stack);
 void	init_stack(t_stack *stack, int *items, int size);
+
+void	print_stack_a(t_algo *algo);
+void	print_stack_b(t_algo *algo);
+void	print_stack_ab(t_algo *algo);
 
 #endif
