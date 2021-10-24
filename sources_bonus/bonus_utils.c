@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 07:13:08 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/24 09:41:00 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	stack_is_sorted(t_stack *stack)
 	int	i;
 
 	i = -1;
-	while (++i < (stack->top - 1))
+	while (++i < (stack->size - 1))
 		if (stack->items[i] > stack->items[i + 1])
 			return (false);
 	return (true);
@@ -87,7 +87,7 @@ int	stack_is_sorted(t_stack *stack)
 
 int	valid_sort(t_data *data)
 {
-	if (stack_is_sorted(data->stack_a) && !data->stack_b->top)
+	if (stack_is_sorted(data->stack_a) && !data->stack_b->size)
 		return (true);
 	return (false);
 }

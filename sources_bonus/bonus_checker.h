@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 07:51:52 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/24 09:41:00 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 typedef struct s_stack
 {
 	int	maxsize;
-	int	top;
+	int	size;
 	int	*items;
 }	t_stack;
 

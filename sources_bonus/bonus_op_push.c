@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 07:13:06 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/24 09:41:00 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	push(int op, t_data *data)
 	stack_a = data->stack_a;
 	stack_b = data->stack_b;
 	if (op == PA)
-		do_push(stack_b->items, &stack_b->top, stack_a->items, &stack_a->top);
+		do_push(stack_b->items, &stack_b->size, stack_a->items, &stack_a->size);
 	else if (op == PB)
-		do_push(stack_a->items, &stack_a->top, stack_b->items, &stack_b->top);
+		do_push(stack_a->items, &stack_a->size, stack_b->items, &stack_b->size);
 }
