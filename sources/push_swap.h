@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/24 10:02:55 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/24 13:01:02 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	sort_algo_a(t_data *data);
 void	sort_algo_b(t_data *data);
 
 int		is_sorted(int *array, int size);
+int		is_reverse_sorted(int *array, int size);
 
 void	print_best_algo(t_data *data);
 
