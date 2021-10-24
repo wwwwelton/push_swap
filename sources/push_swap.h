@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/24 13:01:02 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/24 13:49:16 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,6 @@ void	init_stack(t_stack *stack, int *items, int size);
 void	print_stack_a(t_algo *algo);
 void	print_stack_b(t_algo *algo);
 void	print_stack_ab(t_algo *algo);
+void	print_stack(t_stack *stack, char letter);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/24 10:27:31 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/24 13:51:45 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,21 @@ void	print_stack_b(t_algo *algo)
 	i = -1;
 	while (++i < algo->stack_b->size)
 		printf(YEL"[%d] "reset, algo->stack_b->items[i]);
+	printf("\n\n");
+}
+
+void	print_stack(t_stack *stack, char letter)
+{
+	int	i;
+
+	printf("\nSize %c: %d\n", letter, stack->size);
+	i = -1;
+	while (++i < stack->size)
+		printf(BHRED"[%d] "reset, i);
+	printf("\n");
+	i = -1;
+	while (++i < stack->size)
+		printf(YEL"[%d] "reset, stack->items[i]);
 	printf("\n\n");
 }
 
