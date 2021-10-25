@@ -81,7 +81,7 @@ runv2:
 					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap 2 1 3 6 5 8
 
 runv3:
-					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap 1 2 3 4 5
+					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap 5 4 3 2 1
 
 runb:
 					clear && make bonus && ./checker 1 2 3 4 5

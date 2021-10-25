@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/24 13:49:16 by wleite           ###   ########.fr       */
+/*   Updated: 2021/10/24 14:13:22 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ int		unique_numbers(int	*nbrs, int size);
 
 void	sort_algo_a(t_data *data);
 void	sort_algo_b(t_data *data);
+void	brute_sort(int *array, int size);
+void	reverse_brute_sort(int *array, int size);
 
 int		is_sorted(int *array, int size);
 int		is_reverse_sorted(int *array, int size);
