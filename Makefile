@@ -50,7 +50,7 @@ $(NAME_BONUS):		$(LIBFT) $(OBJ_DIR) $(OBJECTS_BONUS) $(HEADER_BONUS)
 					$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) -o $(NAME_BONUS)
 
 $(LIBFT):
-					$(MAKE) -C $(LIBFT_PATH) bonus
+					$(MAKE) -j16 -C $(LIBFT_PATH) bonus
 
 $(OBJ_DIR):
 					mkdir -p $(OBJ_DIR)
@@ -78,10 +78,22 @@ runv:
 					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap 1 2 3 4 5
 
 runv2:
-					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap 2 1 3 6 5 8
+					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap 1 2 3 6 5 8
 
 runv3:
-					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap 5 4 3 2 1
+					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap `ruby -e "puts (0..499).to_a.shuffle.join(' ')"`
+
+runv4:
+					make -j16 && python3 pyviz.py `ruby -e "puts (0..99).to_a.shuffle.join(' ')"`
+
+runp1:
+					make && python3 pyviz.py `ruby -e "puts (0..10).to_a.shuffle.join(' ')"`
+
+runp2:
+					make && python3 pyviz.py `ruby -e "puts (0..100).to_a.shuffle.join(' ')"`
+
+runp3:
+					make && python3 pyviz.py `ruby -e "puts (0..500).to_a.shuffle.join(' ')"`
 
 runb:
 					clear && make bonus && ./checker 1 2 3 4 5
