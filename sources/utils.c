@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 21:47:40 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/04 05:06:41 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,21 @@ static void	print_operations(char *operations)
 	free_splited_mat(splited_operations);
 }
 
+static void	optimize_operations(char **operations)
+{
+	while (ft_strnstr(*operations, "\nra\nrb\n", ft_strlen(*operations)))
+		*operations = ft_str_replace(*operations, "\nra\nrb\n", "\nrr\n");
+	while (ft_strnstr(*operations, "\nrb\nra\n", ft_strlen(*operations)))
+		*operations = ft_str_replace(*operations, "\nrb\nra\n", "\nrr\n");
+	while (ft_strnstr(*operations, "\nrra\nrrb\n", ft_strlen(*operations)))
+		*operations = ft_str_replace(*operations, "\nrra\nrrb\n", "\nrrr\n");
+	while (ft_strnstr(*operations, "\nrrb\nrra\n", ft_strlen(*operations)))
+		*operations = ft_str_replace(*operations, "\nrrb\nrra\n", "\nrrr\n");
+}
+
 void	print_best_algo(t_data *data)
 {
+	optimize_operations(&data->algo_a->operations);
 	if (data->algo_a <= data->algo_b)
 		print_operations(data->algo_a->operations);
 	else

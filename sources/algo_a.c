@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/11/04 02:00:31 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/04 05:13:23 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,16 @@ void	sort_algo_a(t_data *data)
 	if (!valid_sort(algo))
 	{
 		len = data->args_size - 1;
+		while (algo->stack_a->size > data->args_size / 2)
+		{
+			if (algo->stack_a->items[0] == 0
+				|| algo->stack_a->items[0] == stack_c->items[len])
+				do_op(RA, algo);
+			if (algo->stack_a->items[0] <= data->args_size / 2)
+				do_op(PB, algo);
+			else
+				do_op(RA, algo);
+		}
 		while (!is_sorted(algo->stack_a->items, algo->stack_a->size))
 		{
 			if (algo->stack_a->items[0] == 0
