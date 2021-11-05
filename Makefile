@@ -65,49 +65,4 @@ fclean:				clean
 
 re:					fclean all
 
-norm:
-					clear && norminette $(SOURCES) $(HEADER)
-
-normb:
-					clear && norminette $(BONUS_FILES) $(HEADER_BONUS)
-
-run:
-					clear && make && ./push_swap 1 2 3 4 5
-
-runv:
-					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap 1 5 2 4 3
-
-runv2:
-					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap 1 3 2
-
-runv3:
-					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap `ruby -e "puts (-50..79).to_a.shuffle.join(' ')"`
-
-runv4:
-					make -j16 && python3 pyviz.py 1 5 2
-
-runp1:
-					make && python3 pyviz.py `ruby -e "puts (0..10).to_a.shuffle.join(' ')"`
-
-runp2:
-					make && python3 pyviz.py `ruby -e "puts (0..100).to_a.shuffle.join(' ')"`
-
-runp3:
-					make && python3 pyviz.py `ruby -e "puts (0..500).to_a.shuffle.join(' ')"`
-
-runb:
-					clear && make bonus && ./checker 1 2 3 4 5
-
-runbe:
-					clear && make bonus && ./checker 1 2 3 4 a
-
-runbv1:
-					clear && make bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./checker 4 3 6 5 7 0 8 9 2 1
-
-runbv2:
-					clear && make bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./checker 1 2 3 4 a
-
-runbv3:
-					clear && make bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./checker 1 2 3 4 1
-
 .PHONY:				all clean fclean re libft bonus
