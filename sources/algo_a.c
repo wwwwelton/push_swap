@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/11/04 23:52:00 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 01:01:34 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	pre_sort(t_algo *algo, t_data *data, int smallest, int biggest)
 {
+	algo->op_count = 0;
 	while (algo->stack_a->size > data->args_size / 2)
 	{
 		if (algo->stack_a->items[0] == smallest

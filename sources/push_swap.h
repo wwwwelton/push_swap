@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/11/04 23:43:50 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 00:29:27 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,54 +60,41 @@ typedef struct s_data
 	t_algo	*algo_b;
 }	t_data;
 
-int		push_swap(int argc, char **argv);
-
-void	*new_array(size_t number, size_t size);
-t_stack	*new_stack(int capacity);
-t_algo	*new_algo(int capacity);
-
-void	init_data(int argc, char **argv, t_data *data);
-void	deinit_data(t_data *data);
-
-void	exit_error(char *message, int status_code, t_data *data);
-void	get_args(t_data *data);
-
-int		valid_number(char *nbr);
-int		unique_numbers(int	*nbrs, int size);
-
-void	sort_algo_a(t_data *data);
-void	sort_algo_b(t_data *data);
-void	brute_sort(int *array, int size);
-
+int		get_biggest_nbr(int *array, int size);
+int		get_index(int *array, int size, int n);
+int		get_moves(t_stack *stack, int n);
+int		get_smallest_nbr(int *array, int size);
 int		is_sorted(int *array, int size);
-
-void	print_best_algo(t_data *data);
-
-void	free_splited_mat(char **mat);
-
-void	do_op(int op, t_algo *algo);
 int		op_to_code(char *op);
-char	*code_to_op(int op, char **options);
-
-void	swap(int op, t_algo *algo);
+int		push_swap(int argc, char **argv);
+int		put_nbr_to_index(int *array, int size, int n);
+int		stack_is_empty(t_stack *stack);
+int		stack_is_sorted(t_stack *stack);
+int		unique_numbers(int	*nbrs, int size);
+int		valid_number(char *nbr);
+int		valid_sort(t_algo *algo);
+void	brute_sort(int *array, int size);
+void	deinit_data(t_data *data);
+void	do_op(int op, t_algo *algo);
+void	exit_error(char *message, int status_code, t_data *data);
+void	free_splited_mat(char **mat);
+void	get_args(t_data *data);
+void	go_to(t_stack *stack, t_algo *algo, int n, char id);
+void	go_to_best_comb(t_stack *stack_a, t_stack *stack_b, t_data *data);
+void	init_data(int argc, char **argv, t_data *data);
+void	init_stack(t_stack *stack, int *items, int size);
+void	normalize(int *array, int size);
+void	print_best_algo(t_data *data);
 void	push(int op, t_algo *algo);
 void	rotate(int op, t_algo *algo);
 void	rrotate(int op, t_algo *algo);
-
-int		valid_sort(t_algo *algo);
-int		stack_is_sorted(t_stack *stack);
-int		stack_is_empty(t_stack *stack);
-void	init_stack(t_stack *stack, int *items, int size);
-
-int		get_index(int *array, int size, int n);
-void	go_to(t_stack *stack, t_algo *algo, int n, char id);
-int		get_smallest_nbr(int *array, int size);
-int		get_biggest_nbr(int *array, int size);
-
-int		get_moves(t_stack *stack, int n);
-void	go_to_best_comb(t_stack *stack_a, t_stack *stack_b, t_data *data);
-int		put_nbr_to_index(int *array, int size, int n);
-void	normalize(int *array, int size);
+void	sort_algo_a(t_data *data);
+void	sort_algo_b(t_data *data);
+void	swap(int op, t_algo *algo);
+void	*new_array(size_t number, size_t size);
+char	*code_to_op(int op, char **options);
+t_algo	*new_algo(int capacity);
+t_stack	*new_stack(int capacity);
 
 void	print_stack_a(t_algo *algo);
 void	print_stack_b(t_algo *algo);

@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 10:32:34 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 03:17:41 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ int	push_swap(int argc, char **argv)
 	get_args(&data);
 	if (!is_sorted(data.args, data.args_size))
 	{
-		sort_algo_a(&data);
-		sort_algo_b(&data);
+		if (data.args_size >= 10)
+			sort_algo_a(&data);
+		else
+			sort_algo_b(&data);
 		print_best_algo(&data);
 	}
 	deinit_data(&data);

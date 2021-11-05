@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/11/04 23:40:12 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 01:02:36 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_algo	*new_algo(int capacity)
 	algo->stack_b = new_stack(capacity);
 	algo->operations = ft_strdup("");
 	algo->options = ft_split(OPTIONS, ' ');
-	algo->op_count = 0;
+	algo->op_count = INT_MAX;
 	return (algo);
 }
 

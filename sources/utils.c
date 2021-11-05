@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/11/04 05:06:41 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 01:05:39 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ static void	optimize_operations(char **operations)
 void	print_best_algo(t_data *data)
 {
 	optimize_operations(&data->algo_a->operations);
-	if (data->algo_a <= data->algo_b)
+	if (data->algo_a->op_count <= data->algo_b->op_count)
 		print_operations(data->algo_a->operations);
 	else
 		print_operations(data->algo_b->operations);
