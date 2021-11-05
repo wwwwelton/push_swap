@@ -4,7 +4,7 @@ LIBFT			=	$(LIBFT_PATH)/libft.a
 SOURCES_FILES	=	algo_a.c algo_b.c algo_utils.c error.c main.c parser.c
 SOURCES_FILES	+=	push_swap.c utils.c utils_data.c utils_mem.c
 SOURCES_FILES	+=	op_push.c op_rotate.c op_rrotate.c op_swap.c operator.c
-SOURCES_FILES	+=	op_utils.c array_utils.c debug.c
+SOURCES_FILES	+=	op_utils.c array_utils.c debug.c algo_utils2.c
 
 SOURCES_BONUS	=	bonus_checker.c bonus_error.c bonus_op_push.c
 SOURCES_BONUS	+=	bonus_op_rrotate.c bonus_operator.c bonus_utils.c
@@ -81,7 +81,7 @@ runv2:
 					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap 1 2 3 6 5 8
 
 runv3:
-					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap `ruby -e "puts (0..499).to_a.shuffle.join(' ')"`
+					clear && make && valgrind -q --leak-check=full --show-leak-kinds=all -s --error-exitcode=1 --track-origins=yes ./push_swap `ruby -e "puts (-50..50).to_a.shuffle.join(' ')"`
 
 runv4:
 					make -j16 && python3 pyviz.py `ruby -e "puts (0..99).to_a.shuffle.join(' ')"`

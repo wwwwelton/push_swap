@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/24 09:29:54 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/04 23:40:12 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_stack	*new_stack(int capacity)
 		return (NULL);
 	stack->maxsize = capacity;
 	stack->size = 0;
+	stack->top = 0;
 	stack->items = (int *)new_array(sizeof(int), capacity);
 	return (stack);
 }
