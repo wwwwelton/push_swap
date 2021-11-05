@@ -31,7 +31,7 @@ NAME_BONUS		=	checker
 CC				=	clang
 RM				=	rm -rf
 
-CFLAGS			=	-Wall -Wextra -Werror -g3
+CFLAGS			=	-Wall -Wextra -Werror
 
 $(OBJ_DIR)/%.o:		$(SOURCES_DIR)/%.c $(HEADER)
 					$(CC) $(CFLAGS) -c $< -o $@
@@ -50,7 +50,7 @@ $(NAME_BONUS):		$(LIBFT) $(OBJ_DIR) $(OBJECTS_BONUS) $(HEADER_BONUS)
 					$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) -o $(NAME_BONUS)
 
 $(LIBFT):
-					$(MAKE) -j16 -C $(LIBFT_PATH) bonus
+					$(MAKE) -C $(LIBFT_PATH) bonus
 
 $(OBJ_DIR):
 					mkdir -p $(OBJ_DIR)
