@@ -6,17 +6,31 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 19:25:46 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/19 02:12:17 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/01 14:44:54 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <limits.h>
-# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef INT_MIN
+#  define INT_MIN -2147483648
+# endif
+
+# ifndef INT_MAX
+#  define INT_MAX 2147483647
+# endif
+
+# ifndef FALSE
+#  define FALSE 0
+# endif
+
+# ifndef TRUE
+#  define TRUE 1
+# endif
 
 # ifndef OPEN_MAX
 #  define OPEN_MAX 256
