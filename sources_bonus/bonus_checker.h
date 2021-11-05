@@ -6,14 +6,13 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/24 09:41:00 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 04:20:46 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BONUS_CHECKER_H
 # define BONUS_CHECKER_H
 
-# include "stdbool.h"
 # include "../libraries/libft/libft.h"
 
 # ifndef OPTIONS

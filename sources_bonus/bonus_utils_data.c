@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 07:13:06 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 04:21:57 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	init_failed(t_data *data)
 {
 	if (!data->stack_a->items || !data->stack_b->items
 		|| !data->operations || !data->options)
-		return (true);
-	return (false);
+		return (TRUE);
+	return (FALSE);
 }
 
 void	init_data(int argc, char **argv, t_data *data)

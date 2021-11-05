@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/24 09:41:00 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 04:21:57 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	get_args(t_data *data)
 	i = -1;
 	while (++i < data->stack_a->maxsize)
 	{
-		if (valid_number(data->argv[i + 1]) == true)
+		if (valid_number(data->argv[i + 1]) == TRUE)
 		{
 			data->stack_a->items[i] = ft_atoi(data->argv[i + 1]);
 			data->stack_a->size++;
@@ -27,7 +27,7 @@ void	get_args(t_data *data)
 		else
 			exit_error(NULL, 1, data);
 	}
-	if (unique_numbers(data->stack_a->items, data->stack_a->maxsize) == false)
+	if (unique_numbers(data->stack_a->items, data->stack_a->maxsize) == FALSE)
 		exit_error(NULL, 1, data);
 }
 
@@ -40,7 +40,7 @@ void	get_ops(t_data *data)
 		tmp = ft_get_next_line(STDIN_FILENO);
 		if (tmp == NULL)
 			return ;
-		else if (tmp[0] == '\n' || valid_opt(tmp, data->options) == false)
+		else if (tmp[0] == '\n' || valid_opt(tmp, data->options) == FALSE)
 		{
 			ft_free_ptr((void *)&tmp);
 			close(STDIN_FILENO);

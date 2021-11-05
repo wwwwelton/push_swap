@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/11/04 21:50:48 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 04:21:41 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	is_sorted(int *array, int size)
 	i = -1;
 	while (++i < (size - 1))
 		if (array[i] > array[i + 1])
-			return (false);
-	return (true);
+			return (FALSE);
+	return (TRUE);
 }
 
 void	brute_sort(int *array, int size)
@@ -29,10 +29,10 @@ void	brute_sort(int *array, int size)
 	int	swapped;
 	int	tmp;
 
-	swapped = true;
+	swapped = TRUE;
 	while (swapped)
 	{
-		swapped = false;
+		swapped = FALSE;
 		i = -1;
 		while (++i < (size - 1))
 		{
@@ -41,7 +41,7 @@ void	brute_sort(int *array, int size)
 				tmp = array[i];
 				array[i] = array[i + 1];
 				array[i + 1] = tmp;
-				swapped = true;
+				swapped = TRUE;
 			}
 		}
 	}

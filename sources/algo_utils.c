@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/11/04 22:51:00 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 04:21:41 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int	stack_is_sorted(t_stack *stack)
 int	valid_sort(t_algo *algo)
 {
 	if (stack_is_sorted(algo->stack_a) && stack_is_empty(algo->stack_b))
-		return (true);
-	return (false);
+		return (TRUE);
+	return (FALSE);
 }

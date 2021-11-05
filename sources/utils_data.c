@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/10/22 12:41:03 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 04:21:41 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static int	init_algo_failed(t_algo *algo)
 		|| !algo->options
 		|| !algo->stack_a->items
 		|| !algo->stack_b->items)
-		return (true);
-	return (false);
+		return (TRUE);
+	return (FALSE);
 }
 
 static int	init_data_failed(t_data *data)
@@ -27,8 +27,8 @@ static int	init_data_failed(t_data *data)
 	if (!data->args
 		|| init_algo_failed(data->algo_a)
 		|| init_algo_failed(data->algo_b))
-		return (true);
-	return (false);
+		return (TRUE);
+	return (FALSE);
 }
 
 void	init_data(int argc, char **argv, t_data *data)

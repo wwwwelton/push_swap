@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/11/05 01:05:39 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 04:21:41 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,20 @@ int	valid_number(char *nbr)
 	while (nbr[++i] != '\0')
 	{
 		if (nbr[i] == '-' && nbr[i + 1] == '\0')
-			return (false);
+			return (FALSE);
 		else if (!ft_isdigit(nbr[i]) && nbr[i] != '-')
-			return (false);
+			return (FALSE);
 		else if (ft_isdigit(nbr[i]) && nbr[i + 1] == '-')
-			return (false);
+			return (FALSE);
 		if (nbr[i] >= '1' && nbr[i] <= '9')
 			big_digits++;
 	}
 	n = ft_atol(nbr);
 	if (n > INT_MAX || n < INT_MIN)
-		return (false);
+		return (FALSE);
 	if (n == 0 && big_digits)
-		return (false);
-	return (true);
+		return (FALSE);
+	return (TRUE);
 }
 
 int	unique_numbers(int	*nbrs, int size)
@@ -55,10 +55,10 @@ int	unique_numbers(int	*nbrs, int size)
 			if (nbrs[i] == nbrs[j])
 				found++;
 			if (found > 1)
-				return (false);
+				return (FALSE);
 		}
 	}
-	return (true);
+	return (TRUE);
 }
 
 static void	print_operations(char *operations)

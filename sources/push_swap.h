@@ -6,15 +6,13 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/11/05 03:55:01 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 04:29:36 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "stdbool.h"
-# include "stdio.h"
 # include "../libraries/libft/libft.h"
 
 # ifndef OPTIONS
