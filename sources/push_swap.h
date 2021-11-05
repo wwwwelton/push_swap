@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/11/05 04:29:36 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 14:33:16 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int		stack_is_sorted(t_stack *stack);
 int		unique_numbers(int	*nbrs, int size);
 int		valid_number(char *nbr);
 int		valid_sort(t_algo *algo);
-void	brute_sort(int *array, int size);
+void	bubble_sort(int *array, int size);
 void	deinit_data(t_data *data);
 void	do_op(int op, t_algo *algo);
 void	exit_error(char *message, int status_code, t_data *data);

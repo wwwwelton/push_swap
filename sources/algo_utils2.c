@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/11/04 23:52:55 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 14:33:16 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	normalize(int *array, int size)
 	if (!tmp_array)
 		return ;
 	ft_memcpy(tmp_array, array, sizeof(int) * size);
-	brute_sort(tmp_array, size);
+	bubble_sort(tmp_array, size);
 	i = -1;
 	while (++i < size)
 		array[i] = get_index(tmp_array, size, array[i]);

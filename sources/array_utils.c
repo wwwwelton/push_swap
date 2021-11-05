@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:39 by wleite            #+#    #+#             */
-/*   Updated: 2021/11/05 04:21:41 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 14:32:50 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	is_sorted(int *array, int size)
 	return (TRUE);
 }
 
-void	brute_sort(int *array, int size)
+void	bubble_sort(int *array, int size)
 {
 	int	i;
 	int	swapped;
