@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:06:31 by wleite            #+#    #+#             */
-/*   Updated: 2021/11/05 00:29:27 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/05 03:55:01 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,10 +95,5 @@ void	*new_array(size_t number, size_t size);
 char	*code_to_op(int op, char **options);
 t_algo	*new_algo(int capacity);
 t_stack	*new_stack(int capacity);
-
-void	print_stack_a(t_algo *algo);
-void	print_stack_b(t_algo *algo);
-void	print_stack_ab(t_algo *algo);
-void	print_stack(t_stack *stack, char letter);
 
 #endif
